@@ -17,6 +17,8 @@ if (DEBUG) {
     ini_set('display_errors', 'Off');
 }
 
-include CORE.'/common/function.php';
+include CORE . '/common/function.php';
 
-op(FRAMEWORK);
+include CORE . '/index.php';
+
+\core\index::run();
