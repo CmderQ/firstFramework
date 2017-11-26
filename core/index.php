@@ -1,17 +1,25 @@
 <?php
 /**
- * Created by PhpStorm.
- * Filename:  index.php
- * User:      cmder
- * Date:      2017/11/26
- * Time:      22:24
+ * 入口文件
+ * 1.定义常量
+ * 2.加载函数库
+ * 3.启动框架
  */
-namespace  core;
+define('FRAMEWORK', realpath('./'));
+define('CORE', FRAMEWORK . './core');
+define('APP', FRAMEWORK . './APP');
 
-class index
-{
-    static  public function run()
-    {
-        echo 'OK';
-    }
+define('DEBUG', true);
+
+if (DEBUG) {
+    ini_set('display_errors', 'On');
+} else {
+    ini_set('display_errors', 'Off');
 }
+
+include CORE . '/common/function.php';
+
+include CORE . '/index.php';
+
+spl_autoload_register('\core\index::load');
+\core\index::run();
