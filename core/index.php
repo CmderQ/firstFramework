@@ -1,25 +1,42 @@
 <?php
 /**
- * 入口文件
- * 1.定义常量
- * 2.加载函数库
- * 3.启动框架
+ * Created by PhpStorm.
+ * Filename:  index.php
+ * User:      cmder
+ * Date:      2017/11/26
+ * Time:      22:24
  */
-define('FRAMEWORK', realpath('./'));
-define('CORE', FRAMEWORK . './core');
-define('APP', FRAMEWORK . './APP');
 
-define('DEBUG', true);
+namespace core;
 
-if (DEBUG) {
-    ini_set('display_errors', 'On');
-} else {
-    ini_set('display_errors', 'Off');
+class index
+{
+    public static $classMap = array();
+
+    static public function run()
+    {
+        $route = new \core\lib\route();
+        op($route);
+    }
+
+    /**
+     * 自动加载类库
+     * @param $class
+     * @return bool
+     */
+    static public function load($class)
+    {
+        if (isset(self::$classMap['$class'])) {
+            return true;
+        } else {
+            $class = str_replace("\\", '/', $class);
+            $file = FRAMEWORK . '/' . $class . '.php';
+            if (is_file($file)) {
+                include $file;
+                self::$classMap[$class] = $class;
+            } else {
+                return false;
+            }
+        }
+    }
 }
-
-include CORE . '/common/function.php';
-
-include CORE . '/index.php';
-
-spl_autoload_register('\core\index::load');
-\core\index::run();
