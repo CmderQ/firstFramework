@@ -8,7 +8,7 @@
 define('FRAMEWORK', realpath('./'));
 define('CORE', FRAMEWORK . './core');
 define('APP', FRAMEWORK . './APP');
-
+define('MODULE', 'app');
 define('DEBUG', true);
 
 if (DEBUG) {
@@ -21,4 +21,5 @@ include CORE . '/common/function.php';
 
 include CORE . '/index.php';
 
+spl_autoload_register('\core\index::load');
 \core\index::run();
