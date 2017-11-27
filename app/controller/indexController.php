@@ -6,12 +6,17 @@
  * Date:      2017/11/27
  * Time:      22:47
  */
-namespace  app\controller;
+
+namespace app\controller;
+use core\lib\model;
 
 class indexController
 {
     public function index()
     {
-        op('It is indexController');
+        $model = new model();
+        $sql = "SELECT * FROM ceshi";
+        $result = $model->query($sql);
+        op($result->fetchAll());
     }
 }
