@@ -16,7 +16,18 @@ class index
     static public function run()
     {
         $route = new \core\lib\route();
-        op($route);
+        $ctrlClass = $route->ctrl;
+        $ctrlAction = $route->action;
+        $ctrlFile = APP.'/controller/'.$ctrlClass.'Controller.php';
+        $ctrlClass = '\\'.MODULE.'\controller\\'.$ctrlClass.'Controller';
+
+        if(is_file($ctrlFile)){
+            include $ctrlFile;
+            $ctrl = new $ctrlClass();
+            $ctrl->$ctrlAction();
+        }else{
+            throw new \Exception('找不到控制器'.$ctrlClass);
+        }
     }
 
     /**
