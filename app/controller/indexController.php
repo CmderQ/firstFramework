@@ -14,6 +14,8 @@ class indexController  extends \core\index
 {
     public function index()
     {
+        $t = new \core\lib\model();
+        $temp = \core\lib\conf::get('Controller', 'route');
         $data = 'Hello World';
         $this->assign('data', $data);
         $this->display('index.html');
