@@ -10,13 +10,12 @@
 namespace app\controller;
 use core\lib\model;
 
-class indexController
+class indexController  extends \core\index
 {
     public function index()
     {
-        $model = new model();
-        $sql = "SELECT * FROM ceshi";
-        $result = $model->query($sql);
-        op($result->fetchAll());
+        $data = 'Hello World';
+        $this->assign('data', $data);
+        $this->display('index.html');
     }
 }
