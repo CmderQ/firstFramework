@@ -13,20 +13,22 @@ class index
 {
     public static $classMap = array();
 
+    public $assign;
+
     static public function run()
     {
         $route = new \core\lib\route();
         $ctrlClass = $route->ctrl;
         $ctrlAction = $route->action;
-        $ctrlFile = APP.'/controller/'.$ctrlClass.'Controller.php';
-        $ctrlClass = '\\'.MODULE.'\controller\\'.$ctrlClass.'Controller';
+        $ctrlFile = APP . '/controller/' . $ctrlClass . 'Controller.php';
+        $ctrlClass = '\\' . MODULE . '\controller\\' . $ctrlClass . 'Controller';
 
-        if(is_file($ctrlFile)){
+        if (is_file($ctrlFile)) {
             include $ctrlFile;
             $ctrl = new $ctrlClass();
             $ctrl->$ctrlAction();
-        }else{
-            throw new \Exception('找不到控制器'.$ctrlClass);
+        } else {
+            throw new \Exception('找不到控制器' . $ctrlClass);
         }
     }
 
@@ -48,6 +50,21 @@ class index
             } else {
                 return false;
             }
+        }
+    }
+
+
+    public function assign($name, $value)
+    {
+        $this->assign[$name] = $value;
+    }
+
+    public function display($file)
+    {
+        $file = APP.'/views/'.$file;
+        if(is_file($file)){
+            extract($this->assign);
+            include $file;
         }
     }
 }
