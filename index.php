@@ -21,5 +21,6 @@ include CORE . '/common/function.php';
 
 include CORE . '/index.php';
 
+//类自动加载
 spl_autoload_register('\core\index::load');
 \core\index::run();
