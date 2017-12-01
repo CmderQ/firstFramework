@@ -9,6 +9,7 @@
 
 namespace core;
 
+
 class index
 {
     public static $classMap = array();
@@ -17,6 +18,8 @@ class index
 
     static public function run()
     {
+        \core\lib\log::init();
+        \core\lib\log::log('test');
         $route = new \core\lib\route();
         $ctrlClass = $route->ctrl;
         $ctrlAction = $route->action;
