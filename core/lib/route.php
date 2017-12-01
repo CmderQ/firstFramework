@@ -9,6 +9,8 @@
 
 namespace core\lib;
 
+use core\lib\conf;
+
 class route
 {
     public $ctrl;
@@ -37,7 +39,7 @@ class route
                 $this->action = $pathArr[1];
                 unset($pathArr[1]);
             } else {
-                $this->action = 'index';
+                $this->action = conf::get('ACTION', 'route');
             }
 
             //url多余部分换成GET
@@ -52,8 +54,8 @@ class route
             }
 
         } else {
-            $this->ctrl = 'index';
-            $this->action = 'index';
+            $this->ctrl = conf::get('Controller', 'route');
+            $this->action = conf::get('ACTION', 'route');
         }
     }
 }
