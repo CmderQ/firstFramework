@@ -19,7 +19,7 @@ class index
     static public function run()
     {
         \core\lib\log::init();
-        \core\lib\log::log('test');
+        \core\lib\log::log($_SERVER, 'server');
         $route = new \core\lib\route();
         $ctrlClass = $route->ctrl;
         $ctrlAction = $route->action;
@@ -30,6 +30,7 @@ class index
             include $ctrlFile;
             $ctrl = new $ctrlClass();
             $ctrl->$ctrlAction();
+            \core\lib\log::log('ctrl:'.$ctrlClass.'   '.'action:'.$ctrlAction);
         } else {
             throw new \Exception('找不到控制器' . $ctrlClass);
         }
