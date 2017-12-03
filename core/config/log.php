@@ -10,4 +10,7 @@
 
 return [
     'DRIVE' => 'file',
+    'OPTION' => [
+        'PATH' => FRAMEWORK . '/log/',
+    ]
 ];
