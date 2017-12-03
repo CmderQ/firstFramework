@@ -11,7 +11,15 @@ define('APP', FRAMEWORK . './APP');
 define('MODULE', 'app');
 define('DEBUG', true);
 
+include "vendor/autoload.php";
+
 if (DEBUG) {
+    $whoops = new \Whoops\Run;
+    $errorTitle = "框架出错了";
+    $option = new \Whoops\Handler\PrettyPageHandler();
+    $option->setPageTitle($errorTitle);
+    $whoops->pushHandler($option);
+    $whoops->register();
     ini_set('display_errors', 'On');
 } else {
     ini_set('display_errors', 'Off');
