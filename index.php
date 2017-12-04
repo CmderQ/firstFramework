@@ -15,7 +15,7 @@ include "vendor/autoload.php";
 
 if (DEBUG) {
     $whoops = new \Whoops\Run;
-    $errorTitle = "框架出错了";
+    $errorTitle = "框架运行";
     $option = new \Whoops\Handler\PrettyPageHandler();
     $option->setPageTitle($errorTitle);
     $whoops->pushHandler($option);
