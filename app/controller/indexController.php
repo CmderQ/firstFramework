@@ -8,16 +8,15 @@
  */
 
 namespace app\controller;
-use core\lib\model;
 
-class indexController  extends \core\index
+use app\model\ceshiModel;
+
+class indexController extends \core\index
 {
     public function index()
     {
-        $t = new \core\lib\model();
-        $temp = \core\lib\conf::get('Controller', 'route');
-        $data = 'Hello World';
-        $this->assign('data', $data);
-        $this->display('index.html');
+        //测试模型类
+        $model = new ceshiModel();
+       dump( $model->findItem(3));
     }
 }
