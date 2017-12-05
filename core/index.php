@@ -30,7 +30,7 @@ class index
             include $ctrlFile;
             $ctrl = new $ctrlClass();
             $ctrl->$ctrlAction();
-            \core\lib\log::log('ctrl:'.$ctrlClass.'   '.'action:'.$ctrlAction);
+            \core\lib\log::log('ctrl:' . $ctrlClass . '   ' . 'action:' . $ctrlAction);
         } else {
             throw new \Exception('找不到控制器' . $ctrlClass);
         }
@@ -65,8 +65,8 @@ class index
 
     public function display($file)
     {
-        $file = APP.'/views/'.$file;
-        if(is_file($file)){
+        $file = APP . '/views/' . $file;
+        if (is_file($file)) {
             extract($this->assign);
             include $file;
         }
