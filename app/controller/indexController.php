@@ -15,8 +15,8 @@ class indexController extends \core\index
 {
     public function index()
     {
-        //测试模型类
-        $model = new ceshiModel();
-       dump( $model->findItem(3));
+        $data = 'hello nihao';
+        $this->assign('data', $data);
+        $this->display('index.html');
     }
 }
