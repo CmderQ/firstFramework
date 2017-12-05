@@ -7,8 +7,8 @@ namespace Composer\Autoload;
 class ComposerStaticInit33ca093ef941c1ec187298291f8a3dd4
 {
     public static $files = array (
-        '25072dd6e2470089de65ae7bf11d3109' => __DIR__ . '/..' . '/symfony/polyfill-php72/bootstrap.php',
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
+        '25072dd6e2470089de65ae7bf11d3109' => __DIR__ . '/..' . '/symfony/polyfill-php72/bootstrap.php',
         '667aeda72477189d0494fecd327c3641' => __DIR__ . '/..' . '/symfony/var-dumper/Resources/functions/dump.php',
     );
 
@@ -16,6 +16,10 @@ class ComposerStaticInit33ca093ef941c1ec187298291f8a3dd4
         'W' => 
         array (
             'Whoops\\' => 7,
+        ),
+        'T' => 
+        array (
+            'Twig\\' => 5,
         ),
         'S' => 
         array (
@@ -27,12 +31,20 @@ class ComposerStaticInit33ca093ef941c1ec187298291f8a3dd4
         array (
             'Psr\\Log\\' => 8,
         ),
+        'M' => 
+        array (
+            'Medoo\\' => 6,
+        ),
     );
 
     public static $prefixDirsPsr4 = array (
         'Whoops\\' => 
         array (
             0 => __DIR__ . '/..' . '/filp/whoops/src/Whoops',
+        ),
+        'Twig\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/twig/twig/src',
         ),
         'Symfony\\Polyfill\\Php72\\' => 
         array (
@@ -50,6 +62,20 @@ class ComposerStaticInit33ca093ef941c1ec187298291f8a3dd4
         array (
             0 => __DIR__ . '/..' . '/psr/log/Psr/Log',
         ),
+        'Medoo\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/catfan/medoo/src',
+        ),
+    );
+
+    public static $prefixesPsr0 = array (
+        'T' => 
+        array (
+            'Twig_' => 
+            array (
+                0 => __DIR__ . '/..' . '/twig/twig/lib',
+            ),
+        ),
     );
 
     public static function getInitializer(ClassLoader $loader)
@@ -57,6 +83,7 @@ class ComposerStaticInit33ca093ef941c1ec187298291f8a3dd4
         return \Closure::bind(function () use ($loader) {
             $loader->prefixLengthsPsr4 = ComposerStaticInit33ca093ef941c1ec187298291f8a3dd4::$prefixLengthsPsr4;
             $loader->prefixDirsPsr4 = ComposerStaticInit33ca093ef941c1ec187298291f8a3dd4::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInit33ca093ef941c1ec187298291f8a3dd4::$prefixesPsr0;
 
         }, null, ClassLoader::class);
     }
