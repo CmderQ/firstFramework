@@ -10,13 +10,21 @@
 namespace app\controller;
 
 use app\model\ceshiModel;
+use core\index;
 
-class indexController extends \core\index
+class indexController extends index
 {
     public function index()
     {
         $data = 'hello nihao';
         $this->assign('data', $data);
         $this->display('index.html');
+    }
+
+    public function hello()
+    {
+        $data = 'test views';
+        $this->assign('data', $data);
+        $this->display('hello.html');
     }
 }
