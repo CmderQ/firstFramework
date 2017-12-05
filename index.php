@@ -7,7 +7,8 @@
  */
 define('FRAMEWORK', realpath('./'));
 define('CORE', FRAMEWORK . './core');
-define('APP', FRAMEWORK . './APP');
+define('APP', FRAMEWORK . './app');
+define('LOG', FRAMEWORK . './log');
 define('MODULE', 'app');
 define('DEBUG', true);
 
