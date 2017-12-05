@@ -65,10 +65,15 @@ class index
 
     public function display($file)
     {
-        $file = APP . '/views/' . $file;
-        if (is_file($file)) {
-            extract($this->assign);
-            include $file;
+        $files = APP . '/views/' . $file;
+        if (is_file($files)) {
+            $loader = new \Twig_Loader_Filesystem(APP . '/views');
+            $twig = new \Twig_Environment($loader, array(
+                'cache' => LOG . '/twig',
+                'debug' => DEBUG,
+            ));
+            $template = $twig->load($file);
+            $template->display($this->assign ? $this->assign : '');
         }
     }
 }
