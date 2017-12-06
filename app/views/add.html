@@ -1,0 +1,16 @@
+{% extends "common.html" %}
+{% block content %}
+<form action="/index/save" method="post">
+    <fieldset>
+        <legend>添加留言</legend>
+        <div>
+            <input type="text" name="title" placeholder="请输入title">
+        </div>
+        <br>
+        <div>
+            <textarea name="content" placeholder="请输入content" rows="5" cols="22"></textarea>
+        </div>
+        <p><button type="submit">提交</button></p>
+    </fieldset>
+</form>
+{% endblock%}
