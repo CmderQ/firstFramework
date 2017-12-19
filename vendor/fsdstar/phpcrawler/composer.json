@@ -1,0 +1,15 @@
+{
+    "name": "fsdstar/phpcrawler",
+    "description": "This is a Simple PHP reptilian\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[s",
+    "type": "library",
+    "license": "MIT",
+    "require": {
+        "predis/predis": "^1.1",
+        "workerman/workerman": "^3.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "PHPCrawler\\": "src/"
+        }
+    }
+}

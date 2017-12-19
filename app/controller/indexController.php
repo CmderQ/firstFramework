@@ -27,7 +27,6 @@ class indexController extends index
     //添加留言
     public function add()
     {
-
         $this->display('add.html');
     }
 
@@ -60,4 +59,5 @@ class indexController extends index
         }
         exit('参数错误');
     }
+
 }

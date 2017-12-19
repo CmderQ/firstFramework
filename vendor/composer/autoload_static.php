@@ -15,6 +15,7 @@ class ComposerStaticInit33ca093ef941c1ec187298291f8a3dd4
     public static $prefixLengthsPsr4 = array (
         'W' => 
         array (
+            'Workerman\\' => 10,
             'Whoops\\' => 7,
         ),
         'T' => 
@@ -30,6 +31,8 @@ class ComposerStaticInit33ca093ef941c1ec187298291f8a3dd4
         'P' => 
         array (
             'Psr\\Log\\' => 8,
+            'Predis\\' => 7,
+            'PHPCrawler\\' => 11,
         ),
         'M' => 
         array (
@@ -38,6 +41,10 @@ class ComposerStaticInit33ca093ef941c1ec187298291f8a3dd4
     );
 
     public static $prefixDirsPsr4 = array (
+        'Workerman\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/workerman/workerman',
+        ),
         'Whoops\\' => 
         array (
             0 => __DIR__ . '/..' . '/filp/whoops/src/Whoops',
@@ -61,6 +68,14 @@ class ComposerStaticInit33ca093ef941c1ec187298291f8a3dd4
         'Psr\\Log\\' => 
         array (
             0 => __DIR__ . '/..' . '/psr/log/Psr/Log',
+        ),
+        'Predis\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/predis/predis/src',
+        ),
+        'PHPCrawler\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/fsdstar/phpcrawler/src',
         ),
         'Medoo\\' => 
         array (

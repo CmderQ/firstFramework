@@ -6,11 +6,14 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'Workerman\\' => array($vendorDir . '/workerman/workerman'),
     'Whoops\\' => array($vendorDir . '/filp/whoops/src/Whoops'),
     'Twig\\' => array($vendorDir . '/twig/twig/src'),
     'Symfony\\Polyfill\\Php72\\' => array($vendorDir . '/symfony/polyfill-php72'),
     'Symfony\\Polyfill\\Mbstring\\' => array($vendorDir . '/symfony/polyfill-mbstring'),
     'Symfony\\Component\\VarDumper\\' => array($vendorDir . '/symfony/var-dumper'),
     'Psr\\Log\\' => array($vendorDir . '/psr/log/Psr/Log'),
+    'Predis\\' => array($vendorDir . '/predis/predis/src'),
+    'PHPCrawler\\' => array($vendorDir . '/fsdstar/phpcrawler/src'),
     'Medoo\\' => array($vendorDir . '/catfan/medoo/src'),
 );
