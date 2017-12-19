@@ -11,7 +11,8 @@
     "filp/whoops": "*",
     "symfony/var-dumper": "*",
     "catfan/medoo":"*",
-    "twig/twig":"*"
+    "twig/twig":"*",
+    "fsdstar/phpcrawler":"*"
   },
   "repositories": {
     "packagist": {
