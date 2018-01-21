@@ -12,7 +12,8 @@
     "symfony/var-dumper": "*",
     "catfan/medoo":"*",
     "twig/twig":"*",
-    "fsdstar/phpcrawler":"*"
+    "fsdstar/phpcrawler":"*",
+     "phpunit/phpunit": "^6"
   },
   "repositories": {
     "packagist": {
